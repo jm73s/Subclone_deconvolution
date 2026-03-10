@@ -4,10 +4,6 @@ Input: Variant data from various samples of a bacterial infection that descends 
 
 Output: Identifies subclone populations and their phylogenetic structure
 
-## Executables
-
-- `run_pyclone_iterative.py`: clusters into subclones
-- `run_pairtree.py`: infers phylogeny
 
 ## Clustering into subclones
 
@@ -32,4 +28,30 @@ Use [pairtree](https://github.com/morrislab/pairtree) to infer evolutionary rela
 ### Visualise tree corrected subclone frequencies
 
 `pairtree_visualise.ipynb`
+
+## Executables
+
+- `run_pyclone_iterative.py`: clusters into subclones:
+
+positional arguments:
+  pat                   Patient name
+
+options:
+  -h, --help            show this help message and exit
+  --max_cluster MAX_CLUSTER
+                        Maximum number of clusters
+  --restarts RESTARTS   Number of restarts for PyClone
+  --num_threads NUM_THREADS
+                        Number of threads for PyClone fit
+  --std_thresh STD_THRESH
+                        Standard deviation threshold for variability
+  --fixed_thresh FIXED_THRESH
+                        Threshold above which a cluster is considered fixed
+  --neglegible_thresh NEGLEGIBLE_THRESH
+                        Threshold below which a cluster is considered negligible
+  --window_size WINDOW_SIZE
+                        Sliding window size for recombination filtering
+  --recomb_threshold RECOMB_THRESHOLD
+                        Threshold for mutations in a window to consider recombination
+- `run_pairtree.py`: infers phylogeny
 
