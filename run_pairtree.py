@@ -1,4 +1,11 @@
+#!/usr/bin/env python3
+
 import subprocess
+import argparse
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import json
 
 
 def build_pairtree_inputs(pat,iter):
@@ -16,16 +23,7 @@ def build_pairtree_inputs(pat,iter):
     pyclone_df=pd.read_csv(f'{pat}/mut_dyn/pyclone/pyclone_out_{pat}_iter{iter}.tsv',sep='\t',usecols=['mutation_id','cluster_id'],skiprows=1)
     pyclone_pos=pyclone_df['mutation_id'].map(lambda x: int(x.split('_')[1])).unique()
     df_snp=df_snp[df_snp['position'].isin(pyclone_pos)].copy()
-    ## remove positions where allele_freq is always over 0.9
-    #always_high = df_snp.groupby('position')['allele_freq'].transform(lambda x: (x > 0.9).all())
-    ## remove positions where allele_freq is above 5% 1 time or less
-    #only_once_over_5 = df_snp.groupby('position')['allele_freq'].transform(lambda x: (x > 0.05).sum() < 2)
-    #df_snp = df_snp.loc[~always_high & ~only_once_over_5].copy()
-    ## generate new info
 
-    #df_snp['var_reads']=df_snp['DP4'].map(lambda x: int(x.split(',')[2])+int(x.split(',')[3]))
-    #df_snp['var_read_prob']=1
-    #df_snp.rename(columns={'depth':'total_reads'},inplace=True)
     # vectorized DP4 parsing -> var_reads
     dp4 = df_snp['DP4'].str.split(',', expand=True)
     dp4 = dp4.astype(int)
@@ -66,4 +64,18 @@ def build_pairtree_inputs(pat,iter):
 
 def run_pairtree(pat):
         subprocess.run(["bash", "pairtree.sh", pat],check=True)
+
+    
+def main():
+    parser = argparse.ArgumentParser(description="Run pairtree on a patient")
+    parser.add_argument("pat", type=str, help="Patient name")
+
+    
+    args = parser.parse_args()
+    
+    run_pairtree(args.pat)
+    
+if __name__ == "__main__":
+    main()
+
     
