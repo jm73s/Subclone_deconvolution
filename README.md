@@ -107,3 +107,34 @@ pat
     Show this help message and exit
 ```
 
+### `check_mixed.py`
+
+Checks for mixed infection by examining allele frequency distributions per timepoint and counting extrema above a threshold.
+
+```bash
+usage: check_mixed.py [-h] -p PATIENT -k PEAK -w WIDTH [-n PEAK_NUM] -s SAMPLES [--min MIN]
+```
+
+**Options**
+```
+-h, --help
+    Show this help message and exit
+
+-p, --patient PATIENT
+    Patient name
+
+-k, --peak PEAK
+    Peak strength threshold
+
+-w, --width WIDTH
+    Width around peak to count SNPs
+
+-n, --peak_num PEAK_NUM
+    Number of peaks required to call a sample mixed
+
+-s, --samples SAMPLES
+    Number of mixed samples required to call a patient mixed
+
+--min MIN
+    Minimum allele frequency for a peak to be considered
+```
