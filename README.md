@@ -6,8 +6,8 @@ Output: Identifies subclone populations and their phylogenetic structure
 
 ## Executables
 
-'''run_pyclone_iterative.py ''': clusters into subclones
-'''run_pairtree.py''': infers phylogeny
+`run_pyclone_iterative.py`: clusters into subclones
+`run_pairtree.py`: infers phylogeny
 
 ## Clustering into subclones
 
