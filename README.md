@@ -4,6 +4,11 @@ Input: Variant data from various samples of a bacterial infection that descends 
 
 Output: Identifies subclone populations and their phylogenetic structure
 
+## Executables
+
+'''run_pyclone_iterative.py ''': clusters into subclones
+'''run_pairtree.py''': infers phylogeny
+
 ## Clustering into subclones
 
 Use Dirichlet process mixture models to infer clonal population structure, using pyclone-vi ()
