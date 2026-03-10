@@ -83,5 +83,25 @@ pat
 --recomb_threshold RECOMB_THRESHOLD
     Threshold for mutations in a window to consider recombination
 ```
-2) `run_pairtree.py`: infers phylogeny
+### `run_pairtree.py`
+
+Infers phylogeny.
+
+```bash
+usage: run_pairtree.py [-h] pat
+```
+
+Run Pairtree on a patient.
+
+**Positional arguments**
+```
+pat
+    Patient name
+```
+
+**Options**
+```
+-h, --help
+    Show this help message and exit
+```
 
