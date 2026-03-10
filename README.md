@@ -7,7 +7,9 @@ Output: Identifies subclone populations and their phylogenetic structure
 
 ## Clustering into subclones
 
-Use Dirichlet process mixture models to infer clonal population structure, using [pyclone-vi](https://github.com/Roth-Lab/pyclone-vi)
+Use Dirichlet process mixture models to infer clonal population structure, using [pyclone-vi](https://github.com/Roth-Lab/pyclone-vi).
+
+Pyclone-vi is run iteratively, after each run problematic subclones and mutations are identified and remove before the next run. Iteration stops when nothings is left to remove. Problematic mutations are those that seem related to recombination and problematic subclones are those that are either neglegible or that seem to capture diversity related to an inacurate reference used during allignment.
 
 `run_pyclone_iterative.py` 
 
