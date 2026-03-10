@@ -11,7 +11,7 @@ Output: Identifies subclone populations and their phylogenetic structure
 
 ## Clustering into subclones
 
-Use Dirichlet process mixture models to infer clonal population structure, using pyclone-vi (https://github.com/Roth-Lab/pyclone-vi)
+Use Dirichlet process mixture models to infer clonal population structure, using [pyclone-vi](https://github.com/Roth-Lab/pyclone-vi)
 
 `run_pyclone_iterative.py` 
 
@@ -21,7 +21,7 @@ Use Dirichlet process mixture models to infer clonal population structure, using
 
 ## Infer phylogenetic structure 
 
-Use pairtree (https://github.com/morrislab/pairtree) to infer evolutionary relationship between subclones and build a tree, the algorithm conisists of 2 parts
+Use [pairtree](https://github.com/morrislab/pairtree) to infer evolutionary relationship between subclones and build a tree, the algorithm conisists of 2 parts
 
 1) Compute pairwise relation tensor over all subclones. This provides the probability over each of four possible evolutionary relationships between each pair: different branches, child, parent, cocluster.
 
