@@ -249,7 +249,6 @@ def main():
     parser.add_argument("--std_thresh", type=float, default=0.05, help="Standard deviation threshold for variability")
     parser.add_argument("--fixed_thresh", type=float, default=0.9, help="Threshold above which a cluster is considered fixed")
     parser.add_argument("--neglegible_thresh", type=float, default=0.05, help="Threshold below which a cluster is considered negligible")
-    parser.add_argument("--var_thresh", type=float, default=0.025, help="Threshold below which a cluster is considered constant")
     parser.add_argument("--window_size", type=int, default=500, help="Sliding window size for recombination filtering")
     parser.add_argument("--recomb_threshold", type=int, default=5, help="Threshold for mutations in a window to consider recombination")
     
@@ -263,7 +262,6 @@ def main():
         std_thresh=args.std_thresh,
         fixed_thresh=args.fixed_thresh,
         neglegible_thresh=args.neglegible_thresh,
-        var_thresh=args.var_thresh,
         window_size=args.window_size,
         recomb_threshold=args.recomb_threshold
     )
