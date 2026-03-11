@@ -1,6 +1,6 @@
 # Subclone Deconvolution
 
-Input: Variant data from various samples of a bacterial infection that descends from a common ancestor (tsv with variant data and columns: position	depth	ref	alt	DP4	allele_freq	PV4	sample_name)
+Input: Variant data from various samples of a bacterial infection that descends from a common ancestor (tsv with variant data and columns: position,	depth,	ref,	alt,	DP4,	allele_freq,	PV4,	sample_name)
 
 Output: Identifies subclone populations and their phylogenetic structure
 
